@@ -1,16 +1,14 @@
-/**
- * TypeInferenceTest.java 20 oct. 2019
- *
- * Copyright 2019 INDITEX.
- * Departamento de Sistemas
- */
 package javalanguageplayground.version10;
 
-/**
- *	 
- *	@author <a href="mailto:lalbertolf@servicioexterno.inditex.com">Luis Alberto Lado Freire</a>
- *
- */
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 public class TypeInferenceTest {
+	
+	@Test
+	public void test() {
+		final var i = Integer.valueOf("1");
+		Assertions.assertEquals(i.getClass(), Integer.class);
+	}
 
 }
