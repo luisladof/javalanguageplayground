@@ -1,5 +1,6 @@
 package javalanguageplayground.version8;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -16,22 +17,15 @@ public class CollectionTest {
 	@Test
 	public void testIterationBeforeJava8() {
 
-		System.out.println("testIterationBeforeJava8");
-		System.out.println("------------------------");
-
 		List<Country> countries = countryManager.getAll();
+
 		for (Country country : countries) {
 			System.out.println(country);
 		}
-
-		System.out.println();
 	}
 
 	@Test
 	public void testIterationFromJava8WithoutLambdaExpression() {
-
-		System.out.println("testIterationFromJava8WithoutLambdaExpression");
-		System.out.println("---------------------------------------------");
 
 		countryManager.getAll().forEach(new Consumer<Country>() {
 
@@ -41,30 +35,30 @@ public class CollectionTest {
 			}
 
 		});
-
-		System.out.println();
 	}
 
 	@Test
 	public void testIterationFromJava8WithLambdaExpression() {
-
-		System.out.println("testIterationFromJava8WithLambdaExpression");
-		System.out.println("------------------------------------------");
-
 		countryManager.getAll().forEach(country -> System.out.println(country));
-
-		System.out.println();
 	}
 	
 	@Test
 	public void testIterationFromJava8WithLambdaExpressionMethodReference() {
-
-		System.out.println("testIterationFromJava8WithLambdaExpressionMethodReference");
-		System.out.println("---------------------------------------------------------");
-
 		countryManager.getAll().forEach(System.out::println);
+	}
 
-		System.out.println();
+	@Test
+	public void testRemoveIf() {
+		List<Country> countries = countryManager.getAll();
+		countries.removeIf(c -> c.getPopulation() < 100_000_000);
+		countries.forEach(System.out::println);
+	}
+
+	@Test
+	public void testSortComparingReversed() {
+		List<Country> countries = countryManager.getAll();
+		countries.sort(Comparator.comparing(Country::getPopulation).reversed());
+		countries.forEach(System.out::println);
 	}
 
 }

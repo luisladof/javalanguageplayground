@@ -65,7 +65,7 @@ public class Country {
 		builder.append(", capitalCity=");
 		builder.append(capitalCity);
 		builder.append(", population=");
-		builder.append(population);
+		builder.append(String.format("%,d", population));
 		builder.append("]");
 		return builder.toString();
 	}
