@@ -21,11 +21,11 @@ public class ACountryManager implements CountryManager {
 
 		List<Country> countries = new ArrayList<Country>();
 
-		countries.add(new Country(112323, "Spain", "Madrid", 46736776L));
-		countries.add(new Country(114762, "Japan", "Tokyo", 126860301L));
-		countries.add(new Country(104424, "Argentina", "Buenos Aires", 44780677L));
-		countries.add(new Country(133291, "South Africa", "Cape Town", 58558270L));
-		countries.add(new Country(100378, "India", "New Dehli", 1366417754L));
+		countries.add(new Country(112323, "Spain", "Madrid", 46_736_776L));
+		countries.add(new Country(114762, "Japan", "Tokyo", 126_860_301L));
+		countries.add(new Country(104424, "Argentina", "Buenos Aires", 44_780_677L));
+		countries.add(new Country(133291, "South Africa", "Cape Town", 58_558_270L));
+		countries.add(new Country(100378, "India", "New Dehli", 1_366_417_754L));
 
 		return countries;
 	}

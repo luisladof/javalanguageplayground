@@ -12,11 +12,11 @@ public class AnotherCountryManager implements CountryManager {
 	public List<Country> getAll() {
 		List<Country> countries = new ArrayList<Country>();
 
-		countries.add(new Country(929, "Spain", "Madrid", 46934632L));
-		countries.add(new Country(543, "Japan", "Tokyo", 126140000L));
-		countries.add(new Country(786, "Argentina", "Buenos Aires", 44938712L));
-		countries.add(new Country(812, "South Africa", "Cape Town", 58775022L));
-		countries.add(new Country(265, "China", "Beijing", 1400230000L));
+		countries.add(new Country(929, "Spain", "Madrid", 46_934_632L));
+		countries.add(new Country(543, "Japan", "Tokyo", 126_140_000L));
+		countries.add(new Country(786, "Argentina", "Buenos Aires", 44_938_712L));
+		countries.add(new Country(812, "South Africa", "Cape Town", 58_775_022L));
+		countries.add(new Country(265, "China", "Beijing", 1_400_230_000L));
 
 		return countries;
 	}
