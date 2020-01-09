@@ -1,9 +1,7 @@
 package javalanguageplayground.version8;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -80,6 +78,14 @@ public class FunctionLambdaExpressionMethodReferenceTest {
 			e.printStackTrace();
 		}
 
+	}
+	
+	@Test
+	public void testMethodReferenceConstructor() {
+		
+		List<String> countryNames = Arrays.asList("North Korea", "Iran", "Irak", "Cuba");
+		
+		countryNames.stream().map(Country::new).forEach(System.out::println);
 	}
 
 }

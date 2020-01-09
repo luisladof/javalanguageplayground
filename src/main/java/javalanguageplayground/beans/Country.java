@@ -1,5 +1,7 @@
 package javalanguageplayground.beans;
 
+import java.util.Random;
+
 public class Country {
 
 	private final Integer id;
@@ -12,6 +14,10 @@ public class Country {
 		this.name = name;
 		this.capitalCity = capitalCity;
 		this.population = population;
+	}
+	
+	public Country(final String name) {
+		this(new Random().nextInt(), name, "Unknown", 0L);
 	}
 
 	public Integer getId() {
