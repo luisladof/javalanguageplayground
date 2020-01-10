@@ -40,25 +40,6 @@ public class DateTimeTest {
 	}
 
 	@Test
-	public void testDateTimeBeforeJava8() {
-		Calendar now = Calendar.getInstance();
-		now.setTime(new Date());
-		System.out.println(dateTimeFormatLongShort.format(now.getTime()));
-		now.add(Calendar.DAY_OF_YEAR, 5);
-		now.add(Calendar.MINUTE, 10);
-		System.out.println(dateTimeFormatLongShort.format(now.getTime()));
-	}
-
-	@Test
-	public void testTimeBeforeJava8() {
-		Calendar now = Calendar.getInstance();
-		now.setTime(new Date());
-		System.out.println(timeFormatShort.format(now.getTime()));
-		now.add(Calendar.HOUR, 3);
-		System.out.println(timeFormatShort.format(now.getTime()));
-	}
-
-	@Test
 	public void testDateJava8() {
 		LocalDate now = LocalDate.now();
 		System.out.println(now.format(dateFormatterLong));
@@ -67,6 +48,16 @@ public class DateTimeTest {
 		// LocalDate nowPlusFiveDays = now.plus(Period.ofDays(5));
 		System.out.println(now.format(dateFormatterLong));
 		System.out.println(nowPlusFiveDays.format(dateFormatterLong));
+	}
+
+	@Test
+	public void testDateTimeBeforeJava8() {
+		Calendar now = Calendar.getInstance();
+		now.setTime(new Date());
+		System.out.println(dateTimeFormatLongShort.format(now.getTime()));
+		now.add(Calendar.DAY_OF_YEAR, 5);
+		now.add(Calendar.MINUTE, 10);
+		System.out.println(dateTimeFormatLongShort.format(now.getTime()));
 	}
 
 	@Test
@@ -79,6 +70,15 @@ public class DateTimeTest {
 		// now.plus(Period.ofDays(5)).plus(Duration.ofMinutes(10));
 		System.out.println(now.format(dateTimeFormatterLongShort));
 		System.out.println(nowPlusFiveDaysTenMinutes.format(dateTimeFormatterLongShort));
+	}
+
+	@Test
+	public void testTimeBeforeJava8() {
+		Calendar now = Calendar.getInstance();
+		now.setTime(new Date());
+		System.out.println(timeFormatShort.format(now.getTime()));
+		now.add(Calendar.HOUR, 3);
+		System.out.println(timeFormatShort.format(now.getTime()));
 	}
 
 	@Test
@@ -101,14 +101,12 @@ public class DateTimeTest {
 		LocalDateTime now = LocalDateTime.now();
 		System.out.println(ZonedDateTime.of(now, ZoneId.of("America/Los_Angeles")).format(dateTimeFormatterFullFull));
 	}
-	
+
 	@Test
 	public void testConversion() {
 		Calendar calendar = Calendar.getInstance();
 		LocalDateTime now = LocalDateTime.ofInstant(calendar.toInstant(), ZoneId.systemDefault());
 		System.out.println(now.format(dateTimeFormatterLongShort));
 	}
-	
-	
 
 }

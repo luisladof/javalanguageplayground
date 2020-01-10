@@ -8,6 +8,7 @@ import javalanguageplayground.manager.impl.ACountryManager;
 public class DefaultStaticInterfaceTest {
 
 	private CountryManager countryManager = new ACountryManager();
+	// private CountryManager countryManager = new AnotherCountryManager();
 
 	@Test
 	public void testDefaultMethod() {
