@@ -12,6 +12,21 @@
 		<junit-platform.version>1.5.2</junit-platform.version>
 	</properties>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.1</version>
+				<configuration>
+					<compilerArgument>--enable-preview</compilerArgument>
+					<source>13</source>
+					<target>13</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
